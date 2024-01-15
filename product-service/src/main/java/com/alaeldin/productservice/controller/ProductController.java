@@ -8,7 +8,7 @@ import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 @RestController()
-@RequestMapping("api/v1/product")
+@RequestMapping("/api/v1/product")
 @AllArgsConstructor
 public class ProductController {
 
@@ -30,16 +30,16 @@ public class ProductController {
         return new ResponseEntity<>(productDtoPage,HttpStatus.OK);
    }
 
-   @GetMapping("/{id}")
-   public ResponseEntity<ProductDto>getProductById(@PathVariable("id")String productId){
+   @GetMapping(value = "by_id",params = {"id"})
+   public  ResponseEntity<ProductDto>getProductById(@RequestParam("id") String productId){
 
         ProductDto productDto = productService.getProductById(productId);
 
         return new ResponseEntity<>(productDto,HttpStatus.OK);
    }
 
-   @GetMapping("/{name}")
-    public  ResponseEntity<ProductDto> getProductName(@PathVariable("name")String name){
+   @GetMapping(value = "by_name",params = {"name"})
+    public  ResponseEntity<ProductDto> getProductName(@RequestParam("name")String name){
 
         ProductDto productDto = productService.getProductByName(name);
 
