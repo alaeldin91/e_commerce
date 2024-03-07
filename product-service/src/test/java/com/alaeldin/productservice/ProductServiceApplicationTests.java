@@ -115,7 +115,7 @@ class ProductServiceApplicationTests {
 				.description("this is Iphone Phone")
 				.price(BigDecimal.valueOf(1000))
 				.build());
-		products.add(ProductDto.builder()
+		  products.add(ProductDto.builder()
 				.name("Samsung").description("this phone is good")
 				.price(BigDecimal.valueOf(6000)).build());
 	System.out.println("Number of products: " + products.size());

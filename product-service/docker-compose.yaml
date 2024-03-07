@@ -10,6 +10,7 @@ services:
     volumes:
       - mongodb-data:/data/db
 
+
   spring-app:
     image: product-service:latest
     container_name: spring-app-container
